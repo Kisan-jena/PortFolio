@@ -13,7 +13,7 @@ export const HorizontalScaleSeparator = ({
   return (
     <div
       className={cn(
-        'h-10 w-full bg-[repeating-linear-gradient(315deg,var(--color-neutral-100)_0,var(--color-neutral-100)_1px,transparent_1px,transparent_50%)] bg-size-[10px_10px] border-y border-neutral-200 dark:border-neutral-800',
+        'h-10 w-full bg-[repeating-linear-gradient(315deg,var(--color-neutral-100)_0,var(--color-neutral-100)_1px,transparent_1px,transparent_50%)] bg-size-[10px_10px] border-y border-neutral-200',
         className
       )}
     />
@@ -28,7 +28,7 @@ export const HorizontalLineSeparator = ({
   return (
     <div
       className={cn(
-        'h-px w-full bg-neutral-200 dark:bg-neutral-800 pointer-events-none z-20',
+        'h-px w-full bg-neutral-200  pointer-events-none z-20',
         className
       )}
       {...props}
@@ -52,7 +52,7 @@ export const VerticalLineSeparator = ({
   return (
     <div
       className={cn(
-        'absolute inset-y-0 h-full w-px bg-neutral-200 dark:bg-neutral-800 z-0 pointer-events-none',
+        'absolute inset-y-0 h-full w-px bg-neutral-200  z-0 pointer-events-none',
         side === 'right' ? 'right-0' : 'left-0',
         className
       )}
@@ -71,7 +71,7 @@ export const HorizontalBorderSeparator = ({
   return (
     <div
       className={cn(
-        'w-full border-y border-neutral-200 dark:border-neutral-800',
+        'w-full border-y border-neutral-200 ',
         className
       )}
       style={{ height: `${h * 4}px` }}

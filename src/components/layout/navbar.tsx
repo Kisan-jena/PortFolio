@@ -9,7 +9,7 @@ const Navbar = ({ className }: { className?: string }) => {
         className
       )}
     >
-      Navbar
+      Logo
     </div>
   );
 };

@@ -7,8 +7,7 @@ import { ThemeProvider } from 'next-themes';
 
 import Navbar from '@/components/layout/navbar';
 import Container from '@/components/ui/container';
-
-import { Separator, VerticalLine } from '@/components/ui/separator';
+import { HorizontalLineSeparator, VerticalLineSeparator } from '../components/ui/separator';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -41,35 +40,37 @@ export default function RootLayout({
         antialiased
       `}
     >
-      <body className="min-h-screen bg-background  text-foreground">
+      <body className="min-h-screen bg-background text-foreground overflow-x-hidden pt-0">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <main className="relative min-h-screen bg-amber-00 mt-2">
-            {/* GLOBAL VERTICAL LINES */}
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="max-w-3xl mx-auto h-full relative">
-                <VerticalLine side="left" />
-                <VerticalLine side="right" />
-              </div>
+          <main className="relative min-h-screen bg-amber-300 pt-0">
+
+            {/* VERTICAL LINES — fixed, always visible */}
+            <div
+              className="fixed inset-y-0 mt-2 left-1/2 -translate-x-1/2  pointer-events-none z-30"
+              style={{ width: 'min(48rem, 100vw - 2rem)' }}
+            >
+              <VerticalLineSeparator side="left" />
+              <VerticalLineSeparator side="right" />
             </div>
 
-            {/* TOP BORDER */}
-            <Separator className="absolute top-0 inset-x-0" />
-            <Separator className="absolute top-10 inset-x-0" />
+            {/* STICKY NAV BLOCK */}
+            <div className="sticky top-0 bg-background pt-2 bg-neutral-300 z-20">
+              <HorizontalLineSeparator className="mt-0" />
+              <Container>
+                <Navbar className='bg-amber-400'/>
+              </Container>
+              <HorizontalLineSeparator />
+            </div>
 
-            <Container className="bg-amber-00">
-
-              {/* NAVBAR */}
-              <Navbar className="bg-amber-00" />
-
-              {/* PAGE CONTENT */}
-              <div className="relative z-10 ">{children}</div>
+            {/* PAGE CONTENT */}
+            <Container>
+              <div className="relative z-10">{children}</div>
             </Container>
-
           </main>
         </ThemeProvider>
       </body>

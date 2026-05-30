@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Projetcs Page</div>;
+  return <div>Work Page</div>;
 }

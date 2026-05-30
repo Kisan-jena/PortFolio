@@ -47,8 +47,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="relative min-h-screen bg-amber-300 pt-0">
-
+          <main className="relative min-h-screen bg-amber-00 pt-0">
             {/* VERTICAL LINES — fixed, always visible */}
             <div
               className="fixed inset-y-0 mt-2 left-1/2 -translate-x-1/2  pointer-events-none z-30"
@@ -56,15 +55,18 @@ export default function RootLayout({
             >
               <VerticalLineSeparator side="left" />
               <VerticalLineSeparator side="right" />
+              <VerticalLineSeparator className="left-[-80]" side="left" />
+              <VerticalLineSeparator className="right-[-80]" side="right" />
             </div>
 
             {/* STICKY NAV BLOCK */}
-            <div className="sticky top-0 bg-background pt-2 bg-neutral-300 z-20">
+            <div className="sticky top-0 bg-background pt-2 bg-neutral-50 z-20">
               <HorizontalLineSeparator className="mt-0" />
               <Container>
-                <Navbar className='bg-amber-400'/>
+                <Navbar className="" />
               </Container>
               <HorizontalLineSeparator />
+              {/* <HorizontalLineSeparator className='top-18' /> */}
             </div>
 
             {/* PAGE CONTENT */}

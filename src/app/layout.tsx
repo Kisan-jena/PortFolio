@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './css/globals.css';
 
 import { ThemeProvider } from 'next-themes';
+import { Lilita_One } from 'next/font/google';
 
 import Navbar from '@/components/layout/navbar';
 import Container from '@/components/ui/container';
@@ -12,6 +13,12 @@ import { HorizontalLineSeparator, VerticalLineSeparator } from '../components/ui
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
+});
+
+const lilitaOne = Lilita_One({
+  variable: '--font-lilita',
+  subsets: ['latin'],
+  weight: '400', // only weight available
 });
 
 const geistMono = Geist_Mono({
@@ -36,6 +43,7 @@ export default function RootLayout({
       className={`
         ${geistSans.variable}
         ${geistMono.variable}
+        ${lilitaOne.variable}
         h-full
         antialiased
       `}
@@ -60,7 +68,7 @@ export default function RootLayout({
             </div>
 
             {/* STICKY NAV BLOCK */}
-            <div className="sticky top-0 bg-background pt-2 bg-neutral-50 z-20">
+            <div className="sticky top-0 bg-background pt-2 bg-white z-20">
               <HorizontalLineSeparator className="mt-0" />
               <Container>
                 <Navbar className="" />

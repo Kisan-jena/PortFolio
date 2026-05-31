@@ -49,3 +49,10 @@ body {
     background-color 0.3s ease,
     color 0.3s ease;
 }
+
+@layer utilities {
+  .kj-logo {
+    font-family: var(--font-lilita);
+    -webkit-text-stroke: 0.5px black;
+  }
+}

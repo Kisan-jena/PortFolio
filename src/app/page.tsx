@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero section */}
-      <section className="bg-red-00 py-2 h-00">
+      <section className="bg-red-00 py-2 h-300">
         <h1 className="bg-red-00">
           Home Page
         </h1>
@@ -15,7 +15,10 @@ export default function HomePage() {
         <HorizontalScaleSeparator />
       </div>
 
-      <div className="bg-red-00 h-00">nn</div>
+      <div>
+        3290r3298249385
+      </div>
+      
 
       {/* Rest of page content below */}
     </>

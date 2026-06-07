@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import Search from '../ui/search';
+import Search from './search';
+import ModeToggle from './toggle';
+
 
 const navLinks = [
   { label: 'Components', href: '/components' },
@@ -23,10 +25,8 @@ const Navbar = ({ className }: { className?: string }) => {
       <div className="flex justify-between bg-amber-00 items-center w-full">
         <div className="overflow-hidden bg-amber-00">
           <Link href="/">
-            <div
-              className="text-4xl text-white select-none leading-[0.75] block kj-logo "
-            >
-              KJ 
+            <div className="text-4xl text-white dark:text-black select-none leading-[0.75] block kj-logo ">
+              KJ
             </div>
           </Link>
         </div>
@@ -36,14 +36,14 @@ const Navbar = ({ className }: { className?: string }) => {
             <Link
               key={link.href}
               href={link.href}
-              className="text-base text-neutral-500 hover:text-neutral-900 transition-colors duration-200"
+              className="text-sm text-neutral-500 dark:text-neutral-50/65  hover:text-neutral-900 dark:hover:text-white transition-colors duration-200"
             >
               {link.label}
             </Link>
           ))}
 
           <div className="relative group">
-            <button className="text-base text-neutral-500 hover:text-neutral-900 transition-colors">
+            <button className="text-sm text-neutral-500 dark:text-neutral-50/65 hover:text-neutral-900 transition-colors">
               More
             </button>
 
@@ -60,22 +60,8 @@ const Navbar = ({ className }: { className?: string }) => {
             </div>
           </div>
 
-          <Search/>
-
-          {/* <a
-            href="https://github.com/Kisan-jena"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 text-sm text-foreground hover:text-foreground/60 transition-colors"
-          >
-            
-            GH
-          </a> */}
-
-          {/* Dark/Light toggle — wire up later */}
-          <button className="text-sm pr-1 text-foreground hover:text-foreground/60 transition-colors">
-            ◑
-          </button>
+          <Search />
+          <ModeToggle />
         </div>
       </div>
     </div>

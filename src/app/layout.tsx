@@ -6,7 +6,7 @@ import './css/globals.css';
 import { ThemeProvider } from 'next-themes';
 import { Lilita_One } from 'next/font/google';
 
-import Navbar from '@/components/layout/navbar';
+import Navbar from '@/components/navbar/navbar';
 import Container from '@/components/ui/container';
 import { HorizontalLineSeparator, VerticalLineSeparator } from '../components/ui/separator';
 
@@ -15,6 +15,7 @@ const geistSans = Geist({
   subsets: ['latin'],
 });
 
+// for Logo
 const lilitaOne = Lilita_One({
   variable: '--font-lilita',
   subsets: ['latin'],
@@ -27,7 +28,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Kisan Portfolio',
+  title: 'Kisan Kumar jena',
   description: 'Full Stack Developer Portfolio',
 };
 
@@ -68,10 +69,10 @@ export default function RootLayout({
             </div>
 
             {/* STICKY NAV BLOCK */}
-            <div className="sticky top-0 bg-background pt-2 bg-white z-20">
+            <div className="sticky top-0 bg-background pt-2 bg-white dark:bg-neutral-950 z-20">
               <HorizontalLineSeparator className="mt-0" />
               <Container>
-                <Navbar className="" />
+                <Navbar />
               </Container>
               <HorizontalLineSeparator />
               {/* <HorizontalLineSeparator className='top-18' /> */}

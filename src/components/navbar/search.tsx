@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Search2 from '../icons';
+import {Search2} from '../icons';
 
 const Search = () => {
   const [pressed, setPressed] = useState(false);
@@ -40,26 +40,26 @@ const Search = () => {
   return (
     <button
       onClick={triggerPress}
-      className="flex items-center px-2 py-1.5 rounded-2xl border border-neutral-300/80"
+      className="flex items-center px-2 py-1.5 rounded-2xl border border-neutral-300/80 dark:border-neutral-500/70 dark:bg-neutral-700/15"
     >
       <Search2 size={16} color="currentColor" className="text-neutral-400" />
       <div className="flex items-center gap-1 ml-1">
         <kbd
-          className={`text-xs text-neutral-400 bg-neutral-200/50 rounded px-1 transition-all duration-75
+          className={`text-xs text-neutral-400 dark:text-neutral-50/60 bg-neutral-200/50 dark:bg-neutral-300/70 rounded px-1 transition-all duration-75
             ${
               pressed
                 ? 'shadow-none translate-y-px'
-                : 'shadow-2xs shadow-neutral-300/80'
+                : 'shadow-2xs shadow-neutral-300/80 dark:shadow-neutral-400/35'
             }`}
         >
           Ctrl
         </kbd>
         <kbd
-          className={`text-xs text-neutral-400 bg-neutral-200/50 rounded px-1 transition-all duration-75
+          className={`text-xs text-neutral-400 dark:text-neutral-50/60 bg-neutral-200/50 dark:bg-neutral-300/70 rounded px-1 transition-all duration-75
             ${
               pressed
                 ? 'shadow-none translate-y-px'
-                : 'shadow-2xs shadow-neutral-300/80'
+                : 'shadow-2xs shadow-neutral-300/80 dark:shadow-neutral-400/35'
             }`}
         >
           K

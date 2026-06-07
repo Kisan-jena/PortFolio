@@ -1,4 +1,4 @@
-export default function Search2({
+export function Search2({
   size = 80,
   color = '#343C54',
   className = '',
@@ -25,6 +25,35 @@ export default function Search2({
         d="M11.25 5.74902C10.8358 5.74902 10.5 6.08481 10.5 6.49902C10.5 6.91324 10.8358 7.24902 11.25 7.24902C13.8742 7.24902 16.0013 9.37584 16.0013 11.999C16.0013 12.4132 16.3371 12.749 16.7513 12.749C17.1655 12.749 17.5013 12.4132 17.5013 11.999C17.5013 8.54707 14.7023 5.74902 11.25 5.74902Z"
         fill={color}
       />
+    </svg>
+  );
+}
+
+export function Toggle({
+  size = 24,
+  className = '',
+}: {
+  size?: number;
+  className?: string;
+}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      suppressHydrationWarning
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 3L12 21" />
+      <path d="M12 9L16.65 4.35" />
+      <path d="M12 14.37L19.37 7" />
+      <path d="M12 19.6L20.85 10.75" />
     </svg>
   );
 }

@@ -64,8 +64,14 @@ export default function RootLayout({
             >
               <VerticalLineSeparator side="left" />
               <VerticalLineSeparator side="right" />
-              <VerticalLineSeparator className="left-[-80]" side="left" />
-              <VerticalLineSeparator className="right-[-80]" side="right" />
+              <VerticalLineSeparator
+                className="left-[-80] w-[0.5px]"
+                side="left"
+              />
+              <VerticalLineSeparator
+                className="right-[-80] w-[0.5px]"
+                side="right"
+              />
             </div>
 
             {/* STICKY NAV BLOCK */}

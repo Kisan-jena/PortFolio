@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import Search from './search';
 import ModeToggle from './toggle';
+import MoreMenu from './moreMenu';
 
 
 const navLinks = [
@@ -11,19 +12,14 @@ const navLinks = [
   { label: 'Work', href: '/work' }
 ];
 
-const moreLinks = [
-  { label: 'Blogs', href: '/blog' },
-  { label: 'Resume', href: '/resume' },
-  { label: 'Gears', href: '/gears' },
-  { label: 'Library', href: '/library' }
-];
-
 
 const Navbar = ({ className }: { className?: string }) => {
   return (
-    <div className={cn('relative flex items-center py-2', className)}>
-      <div className="flex justify-between bg-amber-00 items-center w-full">
-        <div className="overflow-hidden bg-amber-00">
+    <div
+      className={cn('relative flex items-center py-2 px-6 lg:px-2', className)}
+    >
+      <div className="flex justify-between items-center w-full">
+        <div className="overflow-hidden ">
           <Link href="/">
             <div className="text-4xl text-white dark:text-black select-none leading-[0.75] block kj-logo ">
               KJ
@@ -42,24 +38,7 @@ const Navbar = ({ className }: { className?: string }) => {
             </Link>
           ))}
 
-          <div className="relative group">
-            <button className="text-sm text-neutral-500 dark:text-neutral-50/65 hover:text-neutral-900 transition-colors">
-              More
-            </button>
-
-            <div className="absolute left-0 top-7 mt-2 w-40 bg-neutral-300 border-neutral-700 rounded-md shadow-md hidden group-hover:flex flex-col z-50">
-              {moreLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-4 py-2 text-sm hover:bg-neutral-100 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
+          <MoreMenu />
           <Search />
           <ModeToggle />
         </div>

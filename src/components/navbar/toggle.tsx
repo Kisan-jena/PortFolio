@@ -1,17 +1,21 @@
 'use client';
 
 import React from 'react';
-import { Toggle, Moon, Sun } from '../icons';
+import { Moon, Sun } from '../icons';
 import { useTheme } from 'next-themes';
+import { cn } from '@/lib/utils';
 
-const ModeToggle = () => {
+const ModeToggle = ({ className }: { className?: string }) => {
   const { resolvedTheme, setTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
+  const isDark = resolvedTheme === 'dark';
 
   return (
     <button
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded-md text-foreground hover:bg-neutral-100 transition-all duration-300 ease-in-out"
+      className={cn(
+        'p-1.5 text-foreground rounded-md hover:bg-neutral-100 transition-all duration-300 ease-in-out',
+        className
+      )}
       aria-label="Toggle theme"
     >
       {/* Toggle 1 */}
@@ -23,12 +27,12 @@ const ModeToggle = () => {
       {/* Toggle 2 */}
       {isDark ? (
         <Moon
-          size={14}
+          size={16}
           className="transition-transform duration-300 hover:rotate-12"
         />
       ) : (
         <Sun
-          size={14}
+          size={16}
           className="transition-transform duration-300 hover:rotate-90"
         />
       )}

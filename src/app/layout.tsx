@@ -56,8 +56,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="relative min-h-screen bg-amber-00 pt-0">
-            {/* VERTICAL LINES — fixed, always visible */}
+          <main className="relative min-h-screen">
             <div
               className="fixed inset-y-0 mt-2 left-1/2 -translate-x-1/2  pointer-events-none z-30"
               style={{ width: 'min(48rem, 100vw - 2rem)' }}
@@ -86,7 +85,7 @@ export default function RootLayout({
 
             {/* PAGE CONTENT */}
             <Container>
-              <div className="relative z-10">{children}</div>
+              <div>{children}</div>
             </Container>
           </main>
         </ThemeProvider>

@@ -13,7 +13,7 @@ const ModeToggle = ({ className }: { className?: string }) => {
     <button
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
       className={cn(
-        'p-1.5 text-foreground rounded-md hover:bg-neutral-100 transition-all duration-300 ease-in-out',
+        'p-2 text-foreground  rounded-md hover:bg-neutral-100 transition-all duration-300 ease-in-out',
         className
       )}
       aria-label="Toggle theme"

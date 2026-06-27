@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import {Search2} from '../icons';
+import { Search2 } from '../icons';
 
 const Search = () => {
   const [pressed, setPressed] = useState(false);

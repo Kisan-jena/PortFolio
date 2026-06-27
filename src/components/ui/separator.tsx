@@ -28,7 +28,7 @@ export const HorizontalLineSeparator = ({
   return (
     <div
       className={cn(
-        'h-px w-full absolute bg-neutral-200  pointer-events-none z-20',
+        'h-px w-full absolute bg-neutral-200  pointer-events-none z-0',
         className
       )}
       {...props}
